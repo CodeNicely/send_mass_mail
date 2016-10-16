@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{header}}</h1>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+   
+ <!--   <script>
+function myFunction() {
+    var x = document.getElementById("subject").value;
+     var y = document.getElementById("message").value;
+     var z = document.getElementById("group_id").value;
+
+}
+</script>   -->
+<p></p>
+
+    <form action="." enctype="multipart/form-data"  method="POST">
+    <input type="text" id="subject" name="subject" value="Subject">
+    <input type="text" id="message" name="message" value="Message">
+    <input type="number" id="group_id" name="group_id" value="0">
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
